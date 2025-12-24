@@ -11,8 +11,6 @@
             while (currentP != 100)
             {
 
-
-
                 int diceNumber = r.Next(1, 7);
 
                 int option = r.Next(0, 3);
@@ -34,8 +32,16 @@
                 {
                     currentP = 0;
                 }
+                if (currentP > 100)
+                {
+                    currentP = prevP;
+                }
 
             }
+                Console.WriteLine();
+
+                Console.WriteLine("Player has won the game!");
+
         }
     }
 }
