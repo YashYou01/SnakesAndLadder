@@ -6,12 +6,15 @@
         {
             int player;
             int currentP = 0;
+            int diceCount = 0;
+
             
            Random r = new Random();
             while (currentP != 100)
             {
 
                 int diceNumber = r.Next(1, 7);
+                diceCount++;
 
                 int option = r.Next(0, 3);
                 int prevP = currentP;
@@ -36,6 +39,8 @@
                 {
                     currentP = prevP;
                 }
+                Console.WriteLine("Player current position: " + currentP);
+                Console.WriteLine("--------------------------------");
 
             }
                 Console.WriteLine();
