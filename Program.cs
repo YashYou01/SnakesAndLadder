@@ -5,21 +5,37 @@
         static void Main(string[] args)
         {
             int player;
-            int startP = 0;
+            int currentP = 0;
             
            Random r = new Random();
-            int diceNumber = r.Next(1 , 7);
+            while (currentP != 100)
+            {
 
-            int options = r.Next(0, 3);
-            if(options == 2)
-            {
-                startP+= diceNumber;
+
+
+                int diceNumber = r.Next(1, 7);
+
+                int option = r.Next(0, 3);
+                int prevP = currentP;
+                if (option == 0)
+                {
+                    Console.WriteLine("Option: No Play");
+                }
+
+                else if (option == 1)
+                {
+                    currentP += diceNumber;
+                }
+                else
+                {
+                    currentP -= diceNumber;
+                }
+                if (currentP < 0)
+                {
+                    currentP = 0;
+                }
+
             }
-            else if(options == 3)
-            {
-                startP-= diceNumber; 
-            }
-            
         }
     }
 }
